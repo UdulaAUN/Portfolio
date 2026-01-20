@@ -8,66 +8,107 @@ const skillCategories = [{
     icon: <Code2 className="w-8 h-8 text-blue-400" />,
     level: 'Advanced'
   }, {
-    name: 'JavaScript (ES6+)',
+    name: 'JavaScript',
     icon: <Terminal className="w-8 h-8 text-yellow-400" />,
     level: 'Advanced'
   }, {
-    name: 'HTML5 & CSS3',
+    name: 'HTML5',
     icon: <Layout className="w-8 h-8 text-orange-400" />,
     level: 'Advanced'
-  }, {
+  },{
+    name: 'CSS3',
+    icon: <Layout className="w-8 h-8 text-orange-400" />,
+    level: 'Advanced'
+  },{
     name: 'Tailwind CSS',
     icon: <Layers className="w-8 h-8 text-cyan-400" />,
     level: 'Advanced'
   }, {
-    name: 'Redux',
-    icon: <div className="w-8 h-8 text-purple-400" />,
+    name: 'Vite',
+    icon: <Layout className="w-8 h-8 text-purple-400" />,
     level: 'Intermediate'
   }]
 }, {
-  title: 'Backend & Database',
+  title: 'Backend',
   skills: [{
     name: 'Node.js',
     icon: <Server className="w-8 h-8 text-green-400" />,
     level: 'Intermediate'
   }, {
-    name: 'Express',
+    name: 'Express.js',
     icon: <Settings className="w-8 h-8 text-gray-400" />,
     level: 'Intermediate'
   }, {
-    name: 'REST APIs',
+    name: 'Java',
     icon: <Globe className="w-8 h-8 text-blue-300" />,
     level: 'Advanced'
   }, {
-    name: 'MongoDB',
+    name: 'Python',
     icon: <Database className="w-8 h-8 text-green-500" />,
     level: 'Intermediate'
   }, {
-    name: 'SQL',
+    name: 'PHP',
     icon: <Database className="w-8 h-8 text-blue-500" />,
     level: 'Basic'
-  }]
+  },{
+    name: 'REST APIs',
+    icon: <Globe className="w-8 h-8 text-blue-300" />,
+    level: 'Advanced'
+  },]
 }, {
-  title: 'Tools & Workflow',
+  title: 'Database',
   skills: [{
-    name: 'Git & GitHub',
+    name: 'MongoDB',
     icon: <GitBranch className="w-8 h-8 text-orange-500" />,
     level: 'Advanced'
   }, {
-    name: 'VS Code',
+    name: 'MySQL',
     icon: <Code2 className="w-8 h-8 text-blue-500" />,
     level: 'Advanced'
   }, {
-    name: 'Postman',
+    name: 'Firebase',
     icon: <Send className="w-8 h-8 text-orange-400" />,
     level: 'Intermediate'
+  }]
+},{
+  title: 'Mobile Development',
+  skills: [{
+    name: 'Kotlin',
+    icon: <GitBranch className="w-8 h-8 text-orange-500" />,
+    level: 'Advanced'
   }, {
-    name: 'Agile/Scrum',
-    icon: <Users className="w-8 h-8 text-purple-300" />,
-    level: 'Intermediate'
+    name: 'Android Studio',
+    icon: <Code2 className="w-8 h-8 text-blue-500" />,
+    level: 'Advanced'
+  }]
+},{
+  title: 'System Programming',
+  skills: [{
+    name: 'C',
+    icon: <GitBranch className="w-8 h-8 text-orange-500" />,
+    level: 'Advanced'
   }, {
-    name: 'Webpack',
-    icon: <div className="w-8 h-8 text-blue-400" />,
+    name: 'C++',
+    icon: <Code2 className="w-8 h-8 text-blue-500" />,
+    level: 'Advanced'
+  }]
+},{
+  title: 'Tools & Workflow',
+  skills: [{
+    name: 'Git',
+    icon: <GitBranch className="w-8 h-8 text-orange-500" />,
+    level: 'Advanced'
+  }, {
+    name: 'GitHub',
+    icon: <Code2 className="w-8 h-8 text-blue-500" />,
+    level: 'Advanced'
+  },{
+    name: 'VS Code',
+    icon: <Code2 className="w-8 h-8 text-blue-500" />,
+    level: 'Advanced'
+  },{
+    name: 'Figma',
+    icon: <Users className="w-8 h-8 text-blue-400" />,
     level: 'Basic'
   }]
 }, {
