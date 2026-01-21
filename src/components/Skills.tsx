@@ -131,8 +131,8 @@ export function Skills() {
                   <ScrollReveal key={skill.name} delay={index * 0.05}>
                     <div className="group relative overflow-hidden rounded-xl border border-slate-800 bg-gradient-to-br from-slate-900/60 to-slate-950/60 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40">
 
-                      {/* Accent bar */}
-                      <span className="absolute left-0 top-0 h-full w-1 bg-blue-600 scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
+                      {/* 🔹 BOTTOM FILL BAR (CHANGED) */}
+                      <span className="absolute bottom-0 left-0 h-1 w-full bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
 
                       {/* Content */}
                       <div className="flex items-center gap-4">
