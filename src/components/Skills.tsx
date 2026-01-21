@@ -23,11 +23,11 @@ import {
   SiMysql,
   SiFirebase,
   SiKotlin,
-  SiC,
-  SiCplusplus,
   SiVscodium,
   SiFigma,
 } from "react-icons/si";
+
+import { TbPuzzle } from "react-icons/tb";
 
 import { BsPeople, BsChatDots, BsClock } from "react-icons/bs";
 import { AiOutlineApi } from "react-icons/ai";
@@ -85,7 +85,7 @@ const skillCategories = [
   {
     title: "Soft Skills",
     skills: [
-      { name: "Problem Solving", icon: <BsPeople className="w-8 h-8 text-indigo-400" /> },
+      { name: "Problem Solving", icon: <TbPuzzle className="w-8 h-8 text-indigo-400" /> },
       { name: "Collaboration", icon: <BsPeople className="w-8 h-8 text-purple-400" /> },
       { name: "Communication", icon: <BsChatDots className="w-8 h-8 text-green-400" /> },
       { name: "Time Management", icon: <BsClock className="w-8 h-8 text-yellow-400" /> },
