@@ -101,7 +101,6 @@ export function Skills() {
     <section id="skills" className="py-24 relative z-10">
       <div className="max-w-7xl mx-auto px-6">
 
-        {/* Heading */}
         <ScrollReveal width="100%">
           <div className="text-center mb-20">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -114,7 +113,6 @@ export function Skills() {
           </div>
         </ScrollReveal>
 
-        {/* Categories */}
         <div className="space-y-16">
           {skillCategories.map((category) => (
             <div key={category.title}>
@@ -125,19 +123,23 @@ export function Skills() {
                 </h3>
               </ScrollReveal>
 
-              {/* Skill Cards */}
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {category.skills.map((skill, index) => (
                   <ScrollReveal key={skill.name} delay={index * 0.05}>
                     <div className="group relative overflow-hidden rounded-xl border border-slate-800 bg-gradient-to-br from-slate-900/60 to-slate-950/60 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40">
 
-                      {/* 🔹 BOTTOM FILL BAR (CHANGED) */}
+                      {/* Bottom fill bar */}
                       <span className="absolute bottom-0 left-0 h-1 w-full bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
 
                       {/* Content */}
                       <div className="flex items-center gap-4">
-                        <div className="p-3 rounded-lg bg-slate-900 border border-slate-800 group-hover:scale-110 transition-transform duration-300">
-                          {skill.icon}
+                        <div className="p-3 rounded-lg bg-slate-900 border border-slate-800 transition-transform duration-300 group-hover:scale-110">
+                          
+                          {/* 🔥 BLUR → CLEAR ICON */}
+                          <div className="blur-sm opacity-60 group-hover:blur-0 group-hover:opacity-100 transition-all duration-300">
+                            {skill.icon}
+                          </div>
+
                         </div>
                         <h4 className="text-slate-200 font-medium text-left">
                           {skill.name}
