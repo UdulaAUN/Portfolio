@@ -1,0 +1,97 @@
+import React, { useEffect } from "react";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+
+export function AnimatedBackground() {
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const smoothX = useSpring(mouseX, { damping: 40, stiffness: 200 });
+  const smoothY = useSpring(mouseY, { damping: 40, stiffness: 200 });
+
+  const auroraX = useTransform(smoothX, [-1, 1], ["-20%", "20%"]);
+  const auroraY = useTransform(smoothY, [-1, 1], ["-20%", "20%"]);
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      mouseX.set((e.clientX / window.innerWidth) * 2 - 1);
+      mouseY.set((e.clientY / window.innerHeight) * 2 - 1);
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, [mouseX, mouseY]);
+
+  return (
+    <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none bg-slate-950 isolate">
+
+      {/* Base gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-indigo-950/30 to-slate-950" />
+
+      {/* Aurora layer 1 */}
+      <motion.div
+        className="absolute -inset-40 opacity-40 blur-[120px]"
+        style={{
+          background:
+            "radial-gradient(circle at 30% 30%, rgba(99,102,241,0.45), transparent 60%)",
+          x: auroraX,
+          y: auroraY,
+        }}
+      />
+
+      {/* Aurora layer 2 */}
+      <motion.div
+        className="absolute -inset-40 opacity-30 blur-[140px]"
+        animate={{
+          rotate: [0, 360],
+        }}
+        transition={{
+          duration: 120,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        style={{
+          background:
+            "radial-gradient(circle at 70% 60%, rgba(34,211,238,0.35), transparent 65%)",
+        }}
+      />
+
+      {/* Aurora layer 3 */}
+      <motion.div
+        className="absolute -inset-40 opacity-25 blur-[160px]"
+        animate={{
+          rotate: [360, 0],
+        }}
+        transition={{
+          duration: 160,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        style={{
+          background:
+            "radial-gradient(circle at 50% 50%, rgba(168,85,247,0.35), transparent 65%)",
+        }}
+      />
+
+      {/* Light waves */}
+      <motion.div
+        className="absolute inset-0 opacity-[0.15]"
+        animate={{
+          backgroundPositionX: ["0%", "200%"],
+        }}
+        transition={{
+          duration: 60,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        style={{
+          backgroundImage:
+            "linear-gradient(120deg, transparent 40%, rgba(255,255,255,0.15) 50%, transparent 60%)",
+          backgroundSize: "200% 100%",
+        }}
+      />
+
+      {/* Vignette */}
+      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-slate-950/60" />
+    </div>
+  );
+}
